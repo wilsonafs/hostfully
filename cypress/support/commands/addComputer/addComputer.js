@@ -26,7 +26,7 @@ Cypress.Commands.add('addComputerValidatePage', (title) => {
 })
 
 Cypress.Commands.add('clickCreateBtn400', () => {
-    cy.intercept('POST', 'https://computer-database.gatling.io/computers').as('createComputer')
+    cy.intercept('POST', Cypress.config('baseUrl')).as('createComputer')
     cy.get(el.btnCreateComputer).click()
     cy.wait('@createComputer').then((interception) => {
         expect(interception.response.statusCode).to.equal(400)
