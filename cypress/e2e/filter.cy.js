@@ -14,10 +14,18 @@ describe('Validate filter scenarios', () => {
         cy.noResult('Nothing to display')
     })
     
-    it.only('Perform a successful search', () => {
-        cy.fillFilter('ACER')
+    it('Perform a successful search', () => {
+        cy.fillFilter('Acer')
         cy.clickFilter()
         cy.filterResult()
         cy.validateSearchResult()
+    })
+
+    it('Open search result', () => {
+        cy.fillFilter('Acer') 
+        cy.clickFilter()
+        cy.filterResult()
+        cy.validateSearchResult()
+        cy.openResult()
     })
 })

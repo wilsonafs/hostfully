@@ -34,12 +34,14 @@ Cypress.Commands.add('fillFilter', (text) => {
 
 Cypress.Commands.add('noResult', (message) => {
     const filterValue = Cypress.env('filterValue')
+
     cy.url().should('include', filterValue)
     cy.get(el.resultText).should('be.visible').and('have.text', message)
 })
 
 Cypress.Commands.add('filterResult', () => {
     const filterValue = Cypress.env('filterValue')
+
     cy.url().should('include', filterValue)
     cy.get(el.h1Title).invoke('text').then((text) => {
         expect(text).to.match(/\d+ computers found/)
@@ -49,9 +51,15 @@ Cypress.Commands.add('filterResult', () => {
 Cypress.Commands.add('validateSearchResult', () => {
     const filterValue = Cypress.env('filterValue')
 
-    cy.get(el.tableList).each(($cell) => {
-            const cellText = $cell.text()
-            expect(cellText).to.include(filterValue)
-        
+    cy.get(el.tableList).find('a').each(($link) => {
+        const cellText = $link.text()
+        expect(cellText).to.contain(filterValue)
     })
+})
+
+Cypress.Commands.add('openResult', () => {
+    const filterValue = Cypress.env('filterValue')
+
+    cy.get(el.tableList).find('a').eq(0).click()
+    cy.url().should('not.include', filterValue)
 })
