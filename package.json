@@ -1,0 +1,15 @@
+{
+  "name": "hostfully-qa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:dev": "BASE_URL=https://computer-database.gatling.io/computers npx cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.5"
+  }
+}
