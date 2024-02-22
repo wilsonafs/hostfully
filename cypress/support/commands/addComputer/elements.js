@@ -16,5 +16,8 @@ export const ELEMENTS = {
     selectCompany: '#company',
     btnCreateComputer: 'input[type="submit"]',
     btnCancel: 'a.btn[href="/computers"]',
-    errorMsg: '.clearfix.error'
+    errorMsg: '.clearfix.error',
+
+    // Home redirect message warning
+    alertWarning: '.alert-message.warning'
 }

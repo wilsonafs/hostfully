@@ -20,6 +20,7 @@ describe('Validate computer creation scenarios', () => {
 	})
 
 	it('Successfully create a computer', () => {
-
+		cy.fillForm('A35PC', '2010-10-10', '2012-10-10', 'IBM')
+		cy.clickCreateBtn()
 	})
 })

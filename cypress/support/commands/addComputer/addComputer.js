@@ -47,5 +47,17 @@ Cypress.Commands.add('invalidDates', (name, firstDate, lastDate) => {
 Cypress.Commands.add('clickCancelBtn', () => {
     cy.get(el.btnCancel).click()
     cy.location('href').should('eq', Cypress.config('baseUrl'))
+})
 
+Cypress.Commands.add('fillForm', (name, firstDate, lastDate, company) => {
+    cy.get(el.inputName).type(name)
+    cy.get(el.inputIntroduced).type(firstDate)
+    cy.get(el.inputDiscontinued).type(lastDate)
+    cy.get(el.selectCompany).select(company)
+})
+
+Cypress.Commands.add('clickCreateBtn', () => {
+    cy.get(el.btnCreateComputer).click()
+    cy.location('href').should('eq', Cypress.config('baseUrl'))
+    cy.get(el.alertWarning, {timeout: 5000}).should('be.visible')
 })
