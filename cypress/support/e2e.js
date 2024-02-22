@@ -1,4 +1,4 @@
 import './commands'
 
 // Web Commands
-import './commands/home/home'
+import './commands/addComputer/addComputer'
