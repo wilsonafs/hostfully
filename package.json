@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:dev": "BASE_URL=https://computer-database.gatling.io/computers npx cypress open"
+    "test:dev": "BASE_URL=https://computer-database.gatling.io/computers npx cypress open",
+    "test:headless": "BASE_URL=https://computer-database.gatling.io/computers npx cypress run"
+
   },
   "keywords": [],
   "author": "",
