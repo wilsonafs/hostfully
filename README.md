@@ -13,13 +13,16 @@ npm install
 ## Use
 
 ```bash
-BASE_URL=https://shop.dev.store.totvs.com/ npx cypress open
+BASE_URL=https://computer-database.gatling.io/computers npx cypress open
 # Runs the test in DEV env
 
-BASE_URL=https://shop.dev.store.totvs.com/ npx cypress run
+BASE_URL=https://computer-database.gatling.io/computers npx cypress run
 # Runs the test in DEV env (headless)
 
 ```
+
+## Summary and explanation
+Both are in [ANSWERS.md](./ANSWERS.md)
 
 ## Contributors
 

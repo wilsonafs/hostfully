@@ -12,7 +12,7 @@ describe('Validate computer edition scenarios', () => {
 		cy.clickDelete()
 	})
 
-	it.only('Update a Computer name', () => {
+	it('Update a Computer name', () => {
 		cy.updateName('Computer Name')
 		cy.clickSaveBtn()
 	})
