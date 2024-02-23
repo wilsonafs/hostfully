@@ -13,7 +13,7 @@ export const ELEMENTS = {
     inputIntroduced: '#introduced',
     inputDiscontinued: '#discontinued',
     selectCompany: '#company',
-    btnSaveComputer: 'input[type="submit"]',
+    btnSaveComputer: 'input[value="Save this computer"]',
     btnCancel: 'a.btn[href="/computers"]',
     deleteComputer: 'input[value="Delete this computer"]',
 

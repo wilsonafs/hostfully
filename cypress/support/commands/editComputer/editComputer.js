@@ -25,3 +25,20 @@ Cypress.Commands.add('editComputerValidatePage', (title) => {
     cy.get(el.btnCancel).should('be.visible')
     cy.get(el.deleteComputer).should('be.visible')
 })
+
+Cypress.Commands.add('clickDelete', () => {
+    cy.get(el.deleteComputer).click()
+    cy.location('href').should('eq', Cypress.config('baseUrl'))
+    cy.get(el.alertWarning, {timeout: 5000}).should('be.visible')
+})
+
+Cypress.Commands.add('updateName', (name) => {
+    cy.get(el.inputName).clear()
+    cy.get(el.inputName).type(name)
+})
+
+Cypress.Commands.add('clickSaveBtn', () => {
+    cy.get(el.btnSaveComputer).click()
+    cy.location('href').should('eq', Cypress.config('baseUrl'))
+    cy.get(el.alertWarning, {timeout: 5000}).should('be.visible')
+})

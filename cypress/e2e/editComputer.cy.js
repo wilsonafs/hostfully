@@ -8,5 +8,13 @@ describe('Validate computer edition scenarios', () => {
 		cy.addComputerValidatePage('Edit computer')
 	})
 
+	it('Delete a Computer', () => {
+		cy.clickDelete()
+	})
+
+	it.only('Update a Computer name', () => {
+		cy.updateName('Computer Name')
+		cy.clickSaveBtn()
+	})
 
 })
